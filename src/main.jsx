@@ -3,9 +3,12 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import "flowbite";
+import { ProductDataProvider } from "./context/ProductContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <ProductDataProvider>
+      <App />
+    </ProductDataProvider>
   </React.StrictMode>
 );

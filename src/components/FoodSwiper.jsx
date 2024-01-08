@@ -12,6 +12,7 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { ProductContext } from "../context/ProductContext";
 import Card from "./Card";
+import { Link } from "react-router-dom";
 
 const FoodSwiper = ({ data }) => {
   const { arr, name } = data;
@@ -21,11 +22,13 @@ const FoodSwiper = ({ data }) => {
         <div className="flex items-center justify-between mb-5 ">
           <span className="text-black font-semibold text-2xl">{name}</span>
           <div className="flex items-center">
-            <button>
-              <span className="text-orange-500 font-semibold text-xl hidden md:block">
-                AddMore
-              </span>
-            </button>
+            <Link to={"/addtolist"}>
+              <button>
+                <span className="text-orange-500 font-semibold text-xl hidden md:block">
+                  AddMore
+                </span>
+              </button>
+            </Link>
             <div className="flex gap-2">
               <button className="hidden md:block">
                 <IoIosArrowBack className="text-xl" />

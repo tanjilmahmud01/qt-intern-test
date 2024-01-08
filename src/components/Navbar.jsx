@@ -2,12 +2,15 @@ import React from "react";
 import SearchBar from "./SearchBar";
 import DropdownMenuCustom from "./DropdownMenuCustom";
 import { AiOutlineUser } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav className="">
       <div className="container mx-auto px-3 flex items-center justify-between bg-white h-[80px] border-b border-slate-200 md:border-2 md:border-green-600">
-        <span className="text-xl font-bold">pti.</span>
+        <Link to={"/"}>
+          <span className="text-xl font-bold">pti.</span>
+        </Link>
         <div className="flex items-center gap-2 ">
           <SearchBar />
           <DropdownMenuCustom />

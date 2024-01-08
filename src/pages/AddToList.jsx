@@ -1,23 +1,56 @@
-import React from "react";
+import React, { useContext } from "react";
 import Layout from "../layout/Layout";
 import { useForm } from "react-hook-form";
+import { ProductContext } from "../context/ProductContext";
+import { toast } from "react-toastify";
 
 const AddToList = () => {
+  const { data, setData } = useContext(ProductContext);
+
+  console.log("In the form, data: ", data);
+
+  //   from react hook form
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
-    data["Price"] = parseFloat(data["Price"]);
-    data["IsPopular"] = data.popularity === "true";
-    data["IsRecommended"] = data.popularity === "false";
+
+  const onSubmit = (formdata) => {
+    console.log(formdata);
+    formdata["Id"] = (Math.floor(Math.random() * 100) + 1).toString();
+    console.log("random: ", formdata["Id"]);
+    formdata["Price"] = parseFloat(formdata["Price"]);
+    formdata["IsPopular"] = formdata.popularity === "true";
+    formdata["IsRecommended"] = formdata.popularity === "false";
     // deleting the option coming from input tag, the option has been divided into the
     // two properties IsPopular and IsRecommended
-    delete data["popularity"];
+    delete formdata["popularity"];
+    console.log(formdata);
+
+    //copying context api data into an array to add new item
+    let arr = [...data];
+    arr = [...arr, formdata];
+
+    setData(arr);
+
     console.log(data);
+
+    console.log("Modified Array: ", arr);
+
+    toast.success("Added Item to the Carousel", {
+      position: "bottom-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
   };
+
   return (
     <Layout>
       <div className="container mx-auto md:w-full md:flex md:justify-center">

@@ -6,9 +6,9 @@ import Banner from "./components/Banner";
 import { useContext } from "react";
 import { ProductContext } from "./context/ProductContext";
 
-import Card from "./components/Card";
-
 import FoodSwiper from "./components/FoodSwiper";
+
+import Footer from "./components/Footer";
 
 function App() {
   const { data, loading } = useContext(ProductContext);
@@ -27,6 +27,8 @@ function App() {
 
       <FoodSwiper data={{ arr: popular, name: "Popular" }} />
       <FoodSwiper data={{ arr: recommended, name: "Recommended" }} />
+
+      <Footer />
     </>
   );
 }

@@ -4,11 +4,14 @@ import App from "./App.jsx";
 import "./index.css";
 import "flowbite";
 import { ProductDataProvider } from "./context/ProductContext.jsx";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ProductDataProvider>
-      <App />
-    </ProductDataProvider>
+    <BrowserRouter>
+      <ProductDataProvider>
+        <App />
+      </ProductDataProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );

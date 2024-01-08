@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
     <div>
       <Navbar />
 
-      <div className="md:h-[100vh]">{children}</div>
+      <div className="">{children}</div>
 
       <Footer />
     </div>

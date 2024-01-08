@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav className="">
-      <div className="container mx-auto px-3 flex items-center justify-between bg-white h-[80px] border-b border-slate-200 md:border-2 md:border-green-600">
+      <div className="container mx-auto px-3 flex items-center justify-between bg-white h-[80px] border-b border-slate-200 md: border-none">
         <Link to={"/"}>
           <span className="text-xl font-bold">pti.</span>
         </Link>

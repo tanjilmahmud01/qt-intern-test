@@ -24,7 +24,7 @@ const FoodSwiper = ({ data }) => {
           <div className="flex items-center">
             <Link to={"/addtolist"}>
               <button>
-                <span className="text-orange-500 font-semibold text-xl hidden md:block">
+                <span className="text-orange-500 font-semibold text-xl md:block">
                   AddMore
                 </span>
               </button>
